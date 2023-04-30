@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('../app/assets/fonts/popines/Poppins-Light.ttf');
+  font-weight: 400;
+  font-style: normal;
+  }
+  @font-face {
+    font-family: 'Poppins-600';
+    src: url('../app/assets/fonts/popines/Poppins-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+    }
+    @font-face {
+      font-family: 'Poppins-700';
+      src: url('../app/assets/fonts/popines/Poppins-ExtraBold.ttf');
+      font-weight: 700;
+      font-style: normal;
+      }
+.header-left-divider::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 22%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  width: 1px;
+  height: 16px;
+  background-color: rgba(255,255,255,0.18);
+}

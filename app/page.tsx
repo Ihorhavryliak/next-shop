@@ -1,5 +1,6 @@
 'use client'
 import { Link } from '@chakra-ui/next-js'
+import './globals.css'
 
 export default function Home() {
   return (
