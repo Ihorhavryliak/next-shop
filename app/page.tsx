@@ -4,16 +4,18 @@ import "./globals.css";
 import { Box, Flex } from "@chakra-ui/react";
 import HomeMenu from "./components/Home/HomeMenu";
 import Slider from "./components/Home/Slider";
+import Share from "./components/Home/Share";
 
 export default function Home() {
   return (
     <Box as="main" pt='20px'>
-      <Flex>
+      <Flex gap='20px'>
         <Box w="25%">
           <HomeMenu />
         </Box>
         <Box w="75%">
           <Slider />
+          <Share />
         </Box>
       </Flex>
     </Box>

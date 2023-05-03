@@ -13,6 +13,18 @@ const brandClear = defineStyle({
   },
 });
 
+const clearHome = defineStyle({
+  textTransform: "uppercase",
+  color: "black.100",
+  fontSize: "12px",
+  fontWeight: "700",
+  letterSpacing: "0.12px",
+  fontFamily: 'Poppins-700',
+  _hover: {
+    textDecoration: "none",
+  },
+});
+
 export const LinkTheme = defineStyleConfig({
-  variants: { brandPrimary, brandClear },
+  variants: { brandPrimary, brandClear, clearHome },
 });

@@ -2,15 +2,18 @@ import { extendTheme } from "@chakra-ui/react";
 import { ContainerTheme } from "./Container";
 import { ItemTheme } from "./Item";
 import { LinkTheme } from "@/theme/chakra/Link";
+import { ButtonTheme } from "./Button";
 
 const colorsObj = {
   blue: {
     100: "#08c",
+    200: "#0088cc",
     300: "#1aa9e1",
     800: "#3b5a9a",
   },
   whiteObj: {
-    100: "rgba(0,0,0,0.01)"
+    100: "rgba(0,0,0,0.01)",
+    200: "rgba(255,255,255,0.7)",
   },
   grey: {
     100: "#7c4a3a",
@@ -22,7 +25,7 @@ const colorsObj = {
     700: "#6b7a83",
     800: "#8d8d8d",
     900: "#696969",
-    1000: "#465157"
+    1000: "#465157",
   },
   textColor: {
     100: "#bde1f5",
@@ -30,11 +33,15 @@ const colorsObj = {
   },
   black: {
     100: "#222529",
-    300: "#333333"
+    200: "#3a3f45",
+    300: "#333333",
+    600: "#0b0c0e",
+    700: "#33373d",
   },
-  red:{
-    100: "#ff5b5b"
-  }
+  red: {
+    100: "#ff5b5b",
+    200: "#ff7272",
+  },
 };
 
 const typographyObj = {
@@ -61,7 +68,8 @@ const defaults = {
 const componentsObj = {
   Container: ContainerTheme,
   List: ItemTheme,
-  Link: LinkTheme
+  Link: LinkTheme,
+  Button: ButtonTheme,
 };
 
 const colors = { ...colorsObj };

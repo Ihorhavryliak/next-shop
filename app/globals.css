@@ -18,10 +18,21 @@
 }
 @font-face {
   font-family: "Poppins-700";
-  src: url("../app/assets/fonts/popines/Poppins-ExtraBold.ttf");
+  src: url("../app/assets/fonts/popines/Poppins-Bold.ttf");
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: "Poppins-800";
+  src: url("../app/assets/fonts/popines/Poppins-ExtraBold.ttf");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Segoe";
+  src: url("../app/assets/fonts/sego/segoesc.ttf");
+}
+
 .header-left-divider::before {
   content: "";
   display: block;
@@ -34,4 +45,17 @@
   width: 1px;
   height: 16px;
   background-color: rgba(255, 255, 255, 0.18);
+}
+
+.dot.active span:after, .dot:hover  span::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 3px;
+  bottom: 3px;
+  border-radius: 10px;
+  border: 2px solid;
+  color: #222529 !important;
+  border-color: #222529 !important;
 }
