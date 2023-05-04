@@ -5,6 +5,7 @@ import { Box, Flex } from "@chakra-ui/react";
 import HomeMenu from "./components/Home/HomeMenu";
 import Slider from "./components/Home/Slider";
 import Share from "./components/Home/Share";
+import FeaturedProducts from "./components/Home/FeaturedProducts";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Box w="75%">
           <Slider />
           <Share />
+          <FeaturedProducts />
         </Box>
       </Flex>
     </Box>

@@ -20,8 +20,6 @@ export default function Slider() {
   const [countHight, setCountHight] = useState(500);
 
   const parentWidth = width;
-  console.log(countHight, "countHight");
-  console.log(width, "width");
 
   useEffect(() => {
     if (ref.current) {
@@ -70,6 +68,18 @@ export default function Slider() {
     return () => clearTimeout(timerRef.current);
   }, [goToNext]); */
 
+  const [start, setStart] = useState(0);
+  const [change, setChange] = useState(9);
+
+  //drag
+  const dragStart = (e: React.DragEvent<HTMLDivElement>) => {
+    setStart(e.clientX);
+  };
+  const dragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    setChange(start - e.clientX);
+  };
+  const dragEnd = (e: React.DragEvent<HTMLDivElement>) => { return};
+
   return (
     <Box
       ref={ref as LegacyRef<HTMLDivElement>}
@@ -77,6 +87,9 @@ export default function Slider() {
       height={`${countHight}px`}
       margin="0 auto"
       maxWidth={"880px"}
+      onDragStart={dragStart}
+      onDragOver={dragOver}
+      onDragEnd={dragEnd}
     >
       <Box position="relative" h="100%">
         {/* <Box>
@@ -123,7 +136,7 @@ export default function Slider() {
                     alignItems="center"
                     height="100%"
                     ps="5.5%"
-                    zIndex='2'
+                    zIndex="2"
                   >
                     <Box>
                       <Text
@@ -164,10 +177,10 @@ export default function Slider() {
                           fontSize="11px"
                           lineHeight="1"
                           fontFamily="Poppins-600"
-                          letter-spacing="-0.2px"
+                          letterSpacing="-0.2px"
                           textTransform="uppercase"
-                          pt='10px'
-                          mr='1rem'
+                          pt="10px"
+                          mr="1rem"
                         >
                           Starting At
                         </Text>
@@ -179,20 +192,18 @@ export default function Slider() {
                           color="white"
                           bg="red.200"
                           transform="rotateZ(-2deg)"
-                          h='38px'
-                          mr='0.5rem'
+                          h="38px"
+                          mr="0.5rem"
                         >
                           <Box as="sup" fontSize="50%" top="-0.5em">
                             $
                           </Box>
                           199
-                          <Box as="sup" fontSize="50%" top="-0.5em">99</Box>
+                          <Box as="sup" fontSize="50%" top="-0.5em">
+                            99
+                          </Box>
                         </Text>
-                        <Button
-                        variant={'blackOne'}
-                        >
-                          Shop now
-                        </Button>
+                        <Button variant={"blackOne"}>Shop now</Button>
                       </Flex>
                     </Box>
                   </Flex>
@@ -216,19 +227,31 @@ export default function Slider() {
             ))}
           </Flex>
           {/* buttons */}
-          <Box ps="5.5%" display="flex" position="absolute" bottom="5.5%" zIndex={3}>
+          <Box
+            ps="5.5%"
+            display="flex"
+            position="absolute"
+            bottom="5.5%"
+            zIndex={3}
+          >
             {slides.map((slide, slideIndex) => (
               <Box
                 margin="0 3px"
                 cursor="pointer"
                 key={slideIndex}
                 onClick={() => goToSlide(slideIndex)}
-                className={currentIndex === slideIndex ? 'dot active' : 'dot'}
+                className={currentIndex === slideIndex ? "dot active" : "dot"}
               >
                 <Box
-                display='block'
-                borderRadius='30px'
-                w='14px' h='14px' position='relative' as='span' border='2px' borderColor="black.100"></Box>
+                  display="block"
+                  borderRadius="30px"
+                  w="14px"
+                  h="14px"
+                  position="relative"
+                  as="span"
+                  border="2px"
+                  borderColor="black.100"
+                ></Box>
               </Box>
             ))}
           </Box>

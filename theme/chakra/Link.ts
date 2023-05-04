@@ -1,6 +1,7 @@
 import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
 const brandPrimary = defineStyle({
+  textDecoration: "none",
   _hover: {
     color: "textColor.200",
     textDecoration: "none",
@@ -19,12 +20,17 @@ const clearHome = defineStyle({
   fontSize: "12px",
   fontWeight: "700",
   letterSpacing: "0.12px",
-  fontFamily: 'Poppins-700',
+  fontFamily: "Poppins-700",
   _hover: {
     textDecoration: "none",
   },
 });
 
+
 export const LinkTheme = defineStyleConfig({
-  variants: { brandPrimary, brandClear, clearHome },
+  variants: { brandPrimary, brandClear, clearHome,  },
+  defaultProps: {
+    variant: "brandPrimary",
+    colorScheme: "brand",
+  },
 });

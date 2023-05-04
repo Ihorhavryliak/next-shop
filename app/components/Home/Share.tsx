@@ -43,7 +43,7 @@ export default function Share() {
                     as="h4"
                     fontSize="20.3px"
                     lineHeight="1.1em"
-                    letter-Spacing="-1.45px"
+                    letterSpacing="-1.45px"
                     mr="3px"
                     fontFamily="Poppins-700"
                     textDecoration="line-through "
@@ -60,7 +60,7 @@ export default function Share() {
                     fontSize='20.3px'
                     color='blue.200'
                     lineHeight="1.1em"
-                    letter-Spacing="-1.45px"
+                    letterSpacing="-1.45px"
                     fontFamily="Poppins-700"
                   >OFF</Text>
                 </Flex>
